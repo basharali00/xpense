@@ -1,20 +1,57 @@
-import {Grid, GridItem} from "@chakra-ui/react"
-
+import {Grid, GridItem, Flex, Image, Center, Button} from "@chakra-ui/react"
+import Logo from "../assets/Logo.svg"
 function Header() {
     return (
         <Grid
             h='100%'
-            templateColumns='repeat(5, 1fr)'
-            gap={20}
+            templateColumns='repeat(6, 1fr)' 
+            gap={6} 
             >
-            <GridItem colSpan={1} bg='tomato'>
-                Logo
+            
+            {/* Logo */}
+            <GridItem                 
+                colStart={2}
+                colSpan={1}
+            >
+                <Flex h={100} alignItems="center">
+                    <Image src={Logo}>
+
+                    </Image>
+                </Flex>
             </GridItem>
-            <GridItem colSpan={3} bg='tomato'>
-                Links
+
+            {/* Link Wrapper */}
+            <GridItem 
+                colStart={3} 
+                colSpan={2}
+                
+            >
+                <Flex 
+                    justifyContent="space-around" 
+                    alignItems="center" 
+                    height="100%"
+                >
+                    <div>Features</div>
+                    <div>About us</div>
+                    <h3>Pricing</h3>
+                    <h3>Feedback</h3>
+                </Flex>
             </GridItem>
-            <GridItem colSpan={1} bg='tomato'>
-                Button
+
+            {/* Try Button */}
+            <GridItem 
+                colSpan={1} 
+                colStart={5}
+            >
+                <Center h={100}>
+                    <Button
+                        size="md"
+                        width='200px'
+                        variant='primary'
+                    >
+                        Request a demo
+                    </Button>
+                </Center>
             </GridItem>
         </Grid>        
     )
