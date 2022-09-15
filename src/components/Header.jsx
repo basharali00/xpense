@@ -1,5 +1,6 @@
-import {Grid, GridItem, Flex, Image, Center, Button} from "@chakra-ui/react"
-import Logo from "../assets/Logo.svg"
+import {Grid, GridItem, Flex, Center, Button} from "@chakra-ui/react"
+import Logo from "./Logo"
+
 function Header() {
     return (
         <Grid
@@ -14,9 +15,7 @@ function Header() {
                 colSpan={1}
             >
                 <Flex h={100} alignItems="center">
-                    <Image src={Logo}>
-
-                    </Image>
+                    <Logo />
                 </Flex>
             </GridItem>
 

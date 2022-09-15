@@ -1,25 +1,29 @@
 import {Grid, GridItem} from "@chakra-ui/react"
 
-function Layout ({Header, Main, Footer}) {
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+
+function Layout({children}) {
     return (
         <Grid
             templateAreas={`"header"
                             "main"
                             "footer"`}
-            gridTemplateRows={'100px 1fr 100px'}
-            gridTemplateColumns={'1fr'}
-            gap='1'
             color='blackAlpha.700'
             fontWeight='bold'
             >
+
             <GridItem pl area={'header'}>
-                {Header}
+                <Header />
             </GridItem>
-            <GridItem pl='2'  area={'main'} h='100vh'>
-                {Main}
+
+            <GridItem pl='2'  area={'main'}>
+                {children}
             </GridItem>
+
+
             <GridItem pl='2' bg='blue.300' area={'footer'}>
-                {Footer}
+                <Footer />
             </GridItem>
         </Grid>
     )

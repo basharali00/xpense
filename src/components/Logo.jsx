@@ -1,7 +1,9 @@
+import { Image } from "@chakra-ui/react"
+import logo_img from "../assets/Logo.svg"
 
 function Logo() {
     return (
-        <h1>Logo</h1>
+        <Image src={logo_img} />
     )
 }
 

@@ -1,14 +1,8 @@
-import {ChakraProvider, color, extendTheme} from "@chakra-ui/react"
-import Header from "./components/Header";
-import Layout from "./components/Layout";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import {ChakraProvider, extendTheme} from "@chakra-ui/react"
 
-const colors = {
-  brand: {
+import Layout from "./layouts/Layout"
 
-  }
-}
+import Home from "./pages/Home";
 
 const theme = extendTheme({
   colors: {
@@ -51,11 +45,15 @@ const theme = extendTheme({
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Layout 
-        Header={<Header />}
-        Main={<Main />}
-        Footer={<Footer />}
-      />
+      {/* 
+        * add routing 
+        * route to Home Page
+        * private route
+        * refactor theme
+      */}
+      <Layout>
+        <Home />
+      </Layout>
     </ChakraProvider>
   );
 }
