@@ -1,58 +1,40 @@
-import {Grid, GridItem, Flex, Center, Button} from "@chakra-ui/react"
+import {Flex, Center, Button} from "@chakra-ui/react"
 import Logo from "./Logo"
 
 function Header() {
     return (
-        <Grid
-            h='100%'
-            templateColumns='repeat(6, 1fr)' 
-            gap={6} 
-            >
-            
+        <Flex h='100%' w="100%" alignItems="center">
+
             {/* Logo */}
-            <GridItem                 
-                colStart={2}
-                colSpan={1}
-            >
-                <Flex h={100} alignItems="center">
-                    <Logo />
-                </Flex>
-            </GridItem>
+            <Flex h={100} alignItems="center" flex={1}>
+                <Logo />
+            </Flex>
 
             {/* Link Wrapper */}
-            <GridItem 
-                colStart={3} 
-                colSpan={2}
-                
+            <Flex 
+                justifyContent="space-around" 
+                alignItems="center" 
+                height="100%"
+                flex={1}
             >
-                <Flex 
-                    justifyContent="space-around" 
-                    alignItems="center" 
-                    height="100%"
-                >
-                    <div>Features</div>
-                    <div>About us</div>
-                    <h3>Pricing</h3>
-                    <h3>Feedback</h3>
-                </Flex>
-            </GridItem>
+                <div>Features</div>
+                <div>About us</div>
+                <h3>Pricing</h3>
+                <h3>Feedback</h3>
+            </Flex>
 
             {/* Try Button */}
-            <GridItem 
-                colSpan={1} 
-                colStart={5}
-            >
-                <Center h={100}>
-                    <Button
-                        size="md"
-                        width='200px'
-                        variant='primary'
-                    >
-                        Request a demo
-                    </Button>
-                </Center>
-            </GridItem>
-        </Grid>        
+            <Center h={100} flex={2}>
+                <Button
+                    size="md"
+                    width='200px'
+                    variant='primary'
+                >
+                    Request a demo
+                </Button>
+            </Center>
+
+        </Flex>        
     )
 }
 

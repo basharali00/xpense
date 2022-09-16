@@ -6,23 +6,18 @@ import Footer from "../components/Footer"
 function Layout({children}) {
     return (
         <Grid
-            templateAreas={`"header"
-                            "main"
-                            "footer"`}
             color='blackAlpha.700'
             fontWeight='bold'
-            >
+            templateColumns='repeat(6, 1fr)' 
+        >
 
-            <GridItem pl area={'header'}>
+            <GridItem height={300} colSpan={6} colStart={2} >
                 <Header />
             </GridItem>
 
-            <GridItem pl='2'  area={'main'}>
-                {children}
-            </GridItem>
+            {children}
 
-
-            <GridItem pl='2' bg='blue.300' area={'footer'}>
+            <GridItem pl='2' colSpan={4} colStart={2}> 
                 <Footer />
             </GridItem>
         </Grid>
