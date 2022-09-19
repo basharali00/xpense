@@ -1,10 +1,11 @@
-import { Image } from "@chakra-ui/react"
+import { Box, Image } from "@chakra-ui/react"
+
 import logo_img from "../assets/Logo.svg"
 
-function Logo() {
+export default function Logo(props) {
     return (
-        <Image src={logo_img} />
+        <Box {...props}>
+            <Image src={logo_img} />
+        </Box>
     )
 }
-
-export default Logo

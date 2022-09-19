@@ -1,8 +1,8 @@
 import {
   Box,
   Container,
+  Flex,
   Stack,
-  SimpleGrid,
   Text,
   Link,
   VisuallyHidden,
@@ -51,38 +51,33 @@ const SocialButton = ({
 export default function LargeWithAppLinksAndSocial() {
   return (
     <Box bg="white">
-      <Container as={Stack} maxW={'6xl'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-            <Stack align={'flex-start'}>
+      <Flex p={10} justifyContent={"space-around"} flexWrap={"wrap"} justifyItems={"flex-start"} >
+            <Stack w={{base: "100%", lg: "25%"}} py={5} >  
                 <Logo />
             </Stack>
+            <Flex flexDirection={"column"}  w={{base: "50%", lg: "25%"}}>
+              <ListHeader>Links</ListHeader>
+              <Link href={'#'}>Home</Link>
+              <Link href={'#'}>About Us</Link>
+              <Link href={'#'}>Careers</Link>
+              <Link href={'#'}>Pricing</Link>
+              <Link href={'#'}>Features</Link>
+              <Link href={'#'}>Blog</Link>
+            </Flex>
 
-          <Stack align={'flex-start'}>
-            <ListHeader>Links</ListHeader>
-            <Link href={'#'}>Home</Link>
-            <Link href={'#'}>About Us</Link>
-            <Link href={'#'}>Careers</Link>
-            <Link href={'#'}>Pricing</Link>
-            <Link href={'#'}>Features</Link>
-            <Link href={'#'}>Blog</Link>
-          </Stack>
+            <Flex flexDirection={"column"} w={{base: "50%", lg: "25%"}}>
+              <ListHeader>Legal</ListHeader>
+              <Link href={'#'}>Terms of use</Link>
+              <Link href={'#'}>Terms of conditions</Link>
+              <Link href={'#'}>Privacy policy</Link>
+              <Link href={'#'}>Cookie policy</Link>
+            </Flex>
 
-          <Stack align={'flex-start'}>
-            <ListHeader>Legal</ListHeader>
-            <Link href={'#'}>Terms of use</Link>
-            <Link href={'#'}>Terms of conditions</Link>
-            <Link href={'#'}>Privacy policy</Link>
-            <Link href={'#'}>Cookie policy</Link>
-          </Stack>
-
-          <Stack align={'flex-start'}>
+          <Flex flexDirection={"column"} w={{base: "100%", lg: "25%"}} py={5}>
             <ListHeader>Newsletter</ListHeader>
-            <Link href={'#'}>Cookies Policy</Link>
-
-          </Stack>
-
-        </SimpleGrid>
-      </Container>
+            <Link href={'#'}>Terms of use</Link>
+          </Flex>
+      </Flex>
 
       <Box
         borderTopWidth={1}
@@ -114,6 +109,7 @@ export default function LargeWithAppLinksAndSocial() {
           </Stack>
         </Container>
       </Box>
+
     </Box>
   );
 }

@@ -2,6 +2,7 @@ import {Grid, GridItem} from "@chakra-ui/react"
 
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import Navbar from "../components/Navbar"
 
 function Layout({children}) {
     return (
@@ -10,14 +11,13 @@ function Layout({children}) {
             fontWeight='bold'
             templateColumns='repeat(6, 1fr)' 
         >
-
-            <GridItem height={300} colSpan={6} colStart={2} >
+            <GridItem zIndex={1} height={"30vh"}  colSpan={{base: 6, xl: 4}} colStart={{base: 1, xl: 2}} >
                 <Header />
             </GridItem>
 
             {children}
 
-            <GridItem pl='2' colSpan={4} colStart={2}> 
+            <GridItem colSpan={{base: 6, xl: 4}} colStart={{base: 1, xl: 2}}  > 
                 <Footer />
             </GridItem>
         </Grid>
