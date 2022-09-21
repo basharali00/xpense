@@ -7,7 +7,7 @@ import img_homepage_3 from "../assets/img_homepage_3.svg"
 import img_homepage_4 from "../assets/img_homepage_4.svg"
 import img_homepage_insight  from "../assets/img_homepage_insight.svg"
 
-function Home () {
+export default function Home () {
     return (
     <GridItem colSpan={6} mt="10" justifyContent={"center"}>
 
@@ -211,5 +211,3 @@ function Home () {
     </GridItem>
     )
 }
-
-export default Home

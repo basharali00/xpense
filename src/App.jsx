@@ -1,9 +1,17 @@
 import {ChakraProvider, extendTheme} from "@chakra-ui/react"
+import {
+    Routes,
+    Route,
+} from "react-router-dom"
 
-import Layout from "./layouts/Layout"
-
+import About from "./pages/About";
+import Features from "./pages/Features";
 import Home from "./pages/Home";
-
+import Layout from "./layouts/Layout"
+import Pricing from "./pages/Pricing";
+import Feedback from "./pages/Feedback";
+  
+  
 const theme = extendTheme({
   colors: {
     brand: {
@@ -45,16 +53,16 @@ const theme = extendTheme({
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      {/* 
-        * add routing 
-        * route to Home Page
-        * private route
-        * refactor theme
-      */}
-      <Layout>
-        <Home />
-      </Layout>
-    </ChakraProvider>
+        <Layout>
+        <Routes>
+          <Route path="/" element={<Home />}  />
+          <Route path="/features" element={<Features />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/feedback" element={<Feedback />} />
+        </Routes>
+        </Layout>
+      </ChakraProvider>
   );
 }
 

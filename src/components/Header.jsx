@@ -19,20 +19,20 @@ import Logo from './Logo';
 
 const NAV_ITEMS = [
   {
-    label: 'Inspiration',
-    href: '#',
+    label: 'Features',
+    href: '/features',
   },
   {
-    label: 'Find Work',
-    href: '#',
+    label: 'About us',
+    href: '/about',
   },
   {
-    label: 'Learn Design',
-    href: '#',
+    label: 'Pricing',
+    href: '/pricing',
   },
   {
-    label: 'Hire Designers',
-    href: '#',
+    label: 'Feedback',
+    href: '/feedback',
   },
 ];
 
@@ -128,12 +128,7 @@ export default function WithSubnavigation() {
           />
         </Flex>
         <Flex justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            <Logo />
-          </Text>
+          <Logo />
         </Flex>
         <Flex display={{ base: 'none', md: 'flex' }} mr={10} alignItems={"center"} justifySelf={"center"}>
             <DesktopNav />
