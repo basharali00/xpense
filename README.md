@@ -1,6 +1,6 @@
 # Xpense
 
-### Disclaimer: The design for this website was taken from [Mohammad Ali](https://www.figma.com/community/file/1017796439842049665). I converted it to a website with React.
+ Disclaimer: The design for this website was taken from [Mohammad Ali](https://www.figma.com/community/file/1017796439842049665). I converted it to a website with React.
 
 ## Description
 
