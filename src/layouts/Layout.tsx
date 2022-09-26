@@ -3,7 +3,10 @@ import {Grid, GridItem} from "@chakra-ui/react"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
-function Layout({children}) {
+type Props = {
+    children: JSX.Element
+}
+function Layout({children}: Props) {
     return (
         <Grid
             color='blackAlpha.700'

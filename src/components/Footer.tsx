@@ -8,7 +8,11 @@ import {
 
 import Logo from './Logo';
 
-const ListHeader = ({ children }) => {
+type ListHeaderProps = {
+  children: JSX.Element
+}
+
+const ListHeader = ({children}: ListHeaderProps) => {
   return (
     <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
       {children}
@@ -16,8 +20,7 @@ const ListHeader = ({ children }) => {
   );
 };
 
-
-export default function LargeWithAppLinksAndSocial() {
+function LargeWithAppLinksAndSocial(){
   return (
     <Box bg="white">
       <Flex p={10} justifyContent={"space-around"} flexWrap={"wrap"} justifyItems={"flex-start"} >
@@ -25,7 +28,9 @@ export default function LargeWithAppLinksAndSocial() {
                 <Logo />
             </Stack>
             <Flex flexDirection={"column"}  w={{base: "50%", lg: "25%"}}>
-              <ListHeader>Links</ListHeader>
+              <ListHeader>
+                <Text>Links</Text>
+              </ListHeader>
               <Link href={'#'}>Home</Link>
               <Link href={'#'}>About Us</Link>
               <Link href={'#'}>Careers</Link>
@@ -35,7 +40,9 @@ export default function LargeWithAppLinksAndSocial() {
             </Flex>
 
             <Flex flexDirection={"column"} w={{base: "50%", lg: "25%"}}>
-              <ListHeader>Legal</ListHeader>
+              <ListHeader>
+                <Text>Legal</Text>
+              </ListHeader>
               <Link href={'#'}>Terms of use</Link>
               <Link href={'#'}>Terms of conditions</Link>
               <Link href={'#'}>Privacy policy</Link>
@@ -45,3 +52,5 @@ export default function LargeWithAppLinksAndSocial() {
     </Box>
   );
 }
+
+export default LargeWithAppLinksAndSocial

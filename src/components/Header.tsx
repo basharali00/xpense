@@ -8,7 +8,6 @@ import {
   Collapse,
   Link,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import {
@@ -35,6 +34,11 @@ const NAV_ITEMS = [
     href: '/feedback',
   },
 ];
+
+type MobileNavProps = {
+  label: string,
+  href: string,
+}
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
@@ -75,7 +79,7 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, href }) => {
+const MobileNavItem = ({ label, href }: MobileNavProps) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
   return (

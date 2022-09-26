@@ -1,12 +1,6 @@
 import { Box, Button, Center,  Flex, GridItem, Image, Text} from "@chakra-ui/react"
 
-import brands from "../assets/brands.svg"
-import img_homepage_1 from "../assets/img_homepage_1.svg"
-import img_homepage_2 from "../assets/img_homepage_2.svg"
-import img_homepage_3 from "../assets/img_homepage_3.svg"
-import img_homepage_4 from "../assets/img_homepage_4.svg"
-import img_homepage_insight  from "../assets/img_homepage_insight.svg"
-
+import {brands, img_homepage_1, img_homepage_2, img_homepage_3, img_homepage_4, img_homepage_insight} from "../utils/Constants"
 export default function Home () {
     return (
     <GridItem colSpan={6} mt="10" justifyContent={"center"}>
