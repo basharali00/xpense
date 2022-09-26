@@ -117,7 +117,7 @@ export default function WithSubnavigation() {
         paddingY={10}
       >
         <Flex
-          flex={{ base: 1, md: "auto" }}
+          flex={{ sm: 1, md: "auto" }}
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
         >
@@ -130,7 +130,7 @@ export default function WithSubnavigation() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex justify={{ base: "center", md: "start" }}>
+        <Flex justify={{ base: "center", md: "start" }} justifySelf={"center"}>
           <Logo />
         </Flex>
         <Flex

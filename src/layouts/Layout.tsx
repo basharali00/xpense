@@ -16,7 +16,7 @@ function Layout({ children }: Props) {
     >
       <GridItem
         zIndex={1}
-        height={"30vh"}
+        height={"15vh"}
         colSpan={{ base: 6, xl: 4 }}
         colStart={{ base: 1, xl: 2 }}
       >

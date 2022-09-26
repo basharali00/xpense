@@ -6,7 +6,6 @@ import {
   GridItem,
   Image,
   Fade,
-  Slide,
   Text,
 } from "@chakra-ui/react";
 import VisibilitySensor from "react-visibility-sensor";
@@ -24,7 +23,7 @@ type HomeProps = {
 };
 export default function Home() {
   return (
-    <GridItem colSpan={6} mt="10" justifyContent={"center"}>
+    <GridItem colSpan={6} mt="10" justifyContent={"center"} pt="20">
       <VisibilitySensor
         offset={{ bottom: 100 }}
         partialVisibility={true}
@@ -38,7 +37,7 @@ export default function Home() {
               alignItems="center"
               height="60vh"
               justifyContent="center"
-              direction={{ lg: "row", sm: "column" }}
+              direction={{ lg: "row", base: "column" }}
             >
               <Box
                 w={{ lg: "40%", md: "80%" }}
@@ -46,9 +45,9 @@ export default function Home() {
                 transition={"ease"}
                 transitionDuration={"2"}
               >
-                <Flex direction={"column"}>
+                <Flex direction={"column"} my="2">
                   <Text
-                    fontSize="6xl"
+                    fontSize={{ base: "3xl", lg: "6xl" }}
                     color="brand.dark"
                     my="3"
                     textTransform="uppercase"
@@ -61,7 +60,7 @@ export default function Home() {
                     Dolorem, quidem.
                   </Text>
                 </Flex>
-                <Flex alignItems="center">
+                <Flex alignItems="center" my="2">
                   <Button size="md" width="200px" variant="light">
                     Try free demo
                   </Button>
@@ -72,7 +71,7 @@ export default function Home() {
                 </Flex>
               </Box>
               <Box>
-                <Image src={img_homepage_1} alt="Dan Abramov" />
+                <Image src={img_homepage_1} py="5"/>
               </Box>
             </Flex>
           </Fade>
@@ -80,7 +79,7 @@ export default function Home() {
       </VisibilitySensor>
 
       {/* Insights Section */}
-      <Center backgroundColor="brand.primary" pt="20">
+      <Center backgroundColor="brand.primary" py="10" mt="20">
         <Image src={img_homepage_insight} />
       </Center>
 
@@ -100,15 +99,18 @@ export default function Home() {
             <Flex
               alignItems="center"
               justifyContent="center"
-              direction={{ lg: "row", sm: "column" }}
-              height="90vh"
+              direction={{ lg: "row", base: "column" }}
               pb="3"
             >
               <Box w={{ lg: "40%", md: "80%" }} px="2">
                 <Text color="brand.light" textTransform="uppercase" mb="-5">
                   Alwalys online
                 </Text>
-                <Text fontSize="6xl" color="brand.dark" my="3">
+                <Text
+                  fontSize={{ base: "3xl", lg: "6xl" }}
+                  color="brand.dark"
+                  my="3"
+                >
                   Real-time support with cloud
                 </Text>
 
@@ -126,7 +128,7 @@ export default function Home() {
               </Box>
 
               <Box>
-                <Image src={img_homepage_2} alt="Dan Abramov" />
+                <Image src={img_homepage_2} py="5"/>
               </Box>
             </Flex>
           </Fade>
@@ -145,18 +147,22 @@ export default function Home() {
             <Flex
               alignItems="center"
               justifyContent="center"
-              height="90vh"
-              direction={{ lg: "row", sm: "column-reverse" }}
+              direction={{ lg: "row", base: "column-reverse" }}
               py="10"
             >
               <Box px="2">
-                <Image src={img_homepage_3} />
+                <Image src={img_homepage_3} py="5"/>
               </Box>
               <Box px="2" w={{ lg: "40%", md: "80%" }}>
                 <Text color="brand.light" textTransform="uppercase" mb="-5">
                   free some cost
                 </Text>
-                <Text fontSize="6xl" color="brand.dark" pb="3">
+                <Text
+                  fontSize={{ base: "3xl", lg: "6xl" }}
+                  color="brand.dark"
+                  pb="3"
+                  my="3"
+                >
                   Save cost for you and family
                 </Text>
 
@@ -190,13 +196,18 @@ export default function Home() {
               alignItems="center"
               justifyContent="center"
               height="90vh"
-              direction={{ lg: "row", sm: "column" }}
+              direction={{ lg: "row", base: "column" }}
             >
               <Box w={{ lg: "40%", md: "80%" }} px="2">
                 <Text color="brand.light" textTransform="uppercase" mb="-5">
                   Use anytime
                 </Text>
-                <Text fontSize="6xl" color="brand.dark" pb="3">
+                <Text
+                  fontSize={{ base: "3xl", lg: "6xl" }}
+                  color="brand.dark"
+                  pb="3"
+                  my="3"
+                >
                   Use anytime when you need
                 </Text>
 
@@ -214,7 +225,7 @@ export default function Home() {
               </Box>
 
               <Box>
-                <Image src={img_homepage_4} alt="Dan Abramov" />
+                <Image src={img_homepage_4} py="5"/>
               </Box>
             </Flex>
           </Fade>
