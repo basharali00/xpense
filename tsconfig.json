@@ -12,7 +12,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "typeRoots" : ["node_modules/@types", "src/types"],
+    "typeRoots": ["node_modules/@types", "src/types"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
@@ -22,5 +22,5 @@
     "noEmit": true
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules"]
 }

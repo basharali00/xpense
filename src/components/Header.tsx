@@ -9,57 +9,55 @@ import {
   Link,
   useColorModeValue,
   useDisclosure,
-} from '@chakra-ui/react';
-import {
-  HamburgerIcon,
-  CloseIcon,
-} from '@chakra-ui/icons';
-import Logo from './Logo';
+} from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import Logo from "./Logo";
 
 const NAV_ITEMS = [
   {
-    label: 'Features',
-    href: '/features',
+    label: "Features",
+    href: "/features",
   },
   {
-    label: 'About us',
-    href: '/about',
+    label: "About us",
+    href: "/about",
   },
   {
-    label: 'Pricing',
-    href: '/pricing',
+    label: "Pricing",
+    href: "/pricing",
   },
   {
-    label: 'Feedback',
-    href: '/feedback',
+    label: "Feedback",
+    href: "/feedback",
   },
 ];
 
 type MobileNavProps = {
-  label: string,
-  href: string,
-}
+  label: string;
+  href: string;
+};
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
+  const linkColor = useColorModeValue("gray.600", "gray.200");
+  const linkHoverColor = useColorModeValue("gray.800", "white");
 
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-              <Link
-                p={2}
-                href={navItem.href ?? '#'}
-                fontSize={'sm'}
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: 'none',
-                  color: linkHoverColor,
-                }}>
-                {navItem.label}
-              </Link>
+          <Link
+            p={2}
+            href={navItem.href ?? "#"}
+            fontSize={"sm"}
+            fontWeight={500}
+            color={linkColor}
+            _hover={{
+              textDecoration: "none",
+              color: linkHoverColor,
+            }}
+          >
+            {navItem.label}
+          </Link>
         </Box>
       ))}
     </Stack>
@@ -69,9 +67,10 @@ const DesktopNav = () => {
 const MobileNav = () => {
   return (
     <Stack
-      bg={useColorModeValue('white', 'gray.800')}
+      bg={useColorModeValue("white", "gray.800")}
       p={4}
-      display={{ md: 'none' }}>
+      display={{ md: "none" }}
+    >
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -80,23 +79,22 @@ const MobileNav = () => {
 };
 
 const MobileNavItem = ({ label, href }: MobileNavProps) => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
+  const linkColor = useColorModeValue("gray.600", "gray.200");
+  const linkHoverColor = useColorModeValue("gray.800", "white");
   return (
     <Stack spacing={4}>
       <Flex
         py={2}
         as={Link}
-        href={href ?? '#'}
-        justify={'space-between'}
-        align={'center'}
+        href={href ?? "#"}
+        justify={"space-between"}
+        align={"center"}
         _hover={{
-          textDecoration: 'none',
+          textDecoration: "none",
           color: linkHoverColor,
-        }}>
-        <Text
-          fontWeight={600}
-          color={linkColor}>
+        }}
+      >
+        <Text fontWeight={600} color={linkColor}>
           {label}
         </Text>
       </Flex>
@@ -109,48 +107,54 @@ export default function WithSubnavigation() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('white', 'gray.800')}
-        color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
+        bg={useColorModeValue("white", "gray.800")}
+        color={useColorModeValue("gray.600", "white")}
+        minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        align={'center'}
+        align={"center"}
         justifyContent={"space-between"}
         paddingY={10}
-        >
+      >
         <Flex
-          flex={{ base: 1, md: 'auto' }}
+          flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}>
+          display={{ base: "flex", md: "none" }}
+        >
           <IconButton
             onClick={onToggle}
             icon={
               isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
             }
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
+            variant={"ghost"}
+            aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex justify={{ base: 'center', md: 'start' }}>
+        <Flex justify={{ base: "center", md: "start" }}>
           <Logo />
         </Flex>
-        <Flex display={{ base: 'none', md: 'flex' }} mr={10} alignItems={"center"} justifySelf={"center"}>
-            <DesktopNav />
+        <Flex
+          display={{ base: "none", md: "flex" }}
+          mr={10}
+          alignItems={"center"}
+          justifySelf={"center"}
+        >
+          <DesktopNav />
         </Flex>
 
         <Stack
-          flex={{ base: 1, md: 0}}
-          justify={'flex-end'}
-          
-          direction={'row'}
-          spacing={6}>
+          flex={{ base: 1, md: 0 }}
+          justify={"flex-end"}
+          direction={"row"}
+          spacing={6}
+        >
           <Button
-            as={'a'}
+            as={"a"}
             alignSelf={"center"}
-            fontSize={'sm'}
+            fontSize={"sm"}
             fontWeight={400}
-            href={'#'}
-            variant='primary'
+            href={"#"}
+            variant="primary"
           >
             Request a demo
           </Button>
