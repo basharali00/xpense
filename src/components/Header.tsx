@@ -4,14 +4,22 @@ import {
   Text,
   IconButton,
   Button,
-  Stack,
   Collapse,
+  chakra,
   Link,
+  Stack,
+  shouldForwardProp,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import { motion, isValidMotionProp, useInView } from "framer-motion";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import Logo from "./Logo";
+
+const ChakraBox = chakra(motion.div, {
+  shouldForwardProp: (prop) =>
+    isValidMotionProp(prop) || shouldForwardProp(prop),
+});
 
 const NAV_ITEMS = [
   {
@@ -105,65 +113,83 @@ const MobileNavItem = ({ label, href }: MobileNavProps) => {
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   return (
-    <Box>
-      <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        align={"center"}
-        justifyContent={"space-between"}
-        paddingY={10}
-      >
+    <ChakraBox
+      animate={{
+        opacity: [0, 1],
+      }}
+      // @ts-ignore no problem in operation, although type error appears.
+      transition={{
+        duration: 1.6,
+        ease: "easeOut",
+      }}
+    >
+      <Box>
         <Flex
-          flex={{ sm: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
+          bg={useColorModeValue("white", "gray.800")}
+          color={useColorModeValue("gray.600", "white")}
+          minH={"60px"}
+          py={{ base: 2 }}
+          px={{ base: 4 }}
+          align={"center"}
+          justifyContent={"space-between"}
+          paddingY={10}
         >
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
-        <Flex justify={{ base: "center", md: "start" }} justifySelf={"center"}>
-          <Logo />
-        </Flex>
-        <Flex
-          display={{ base: "none", md: "flex" }}
-          mr={10}
-          alignItems={"center"}
-          justifySelf={"center"}
-        >
-          <DesktopNav />
-        </Flex>
-
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
-          <Button
-            as={"a"}
-            alignSelf={"center"}
-            fontSize={"sm"}
-            fontWeight={400}
-            href={"#"}
-            variant="primary"
+          <Flex
+            flex={{ sm: 1, md: "auto" }}
+            ml={{ base: -2 }}
+            display={{ base: "flex", md: "none" }}
           >
-            Request a demo
-          </Button>
-        </Stack>
-      </Flex>
+            <IconButton
+              onClick={onToggle}
+              icon={
+                isOpen ? (
+                  <CloseIcon w={3} h={3} />
+                ) : (
+                  <HamburgerIcon w={5} h={5} />
+                )
+              }
+              variant={"ghost"}
+              aria-label={"Toggle Navigation"}
+            />
+          </Flex>
+          <Flex
+            justify={{ base: "center", md: "start" }}
+            justifySelf={"center"}
+          >
+            <Logo />
+          </Flex>
+          <Flex
+            display={{ base: "none", md: "flex" }}
+            mr={10}
+            alignItems={"center"}
+            justifySelf={"center"}
+          >
+            <DesktopNav />
+          </Flex>
 
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
-    </Box>
+          <Stack
+            flex={{ base: 1, md: 0 }}
+            justify={"flex-end"}
+            direction={"row"}
+            spacing={6}
+          >
+            <Button
+              as={"a"}
+              alignSelf={"center"}
+              fontSize={"sm"}
+              fontWeight={400}
+              href={"#"}
+              variant="primary"
+            >
+              Request a demo
+            </Button>
+          </Stack>
+        </Flex>
+
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav />
+        </Collapse>
+      </Box>
+    </ChakraBox>
   );
 }
