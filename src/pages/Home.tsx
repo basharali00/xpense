@@ -59,7 +59,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.6,
+            duration: 1.2,
             ease: "easeOut",
           }}
           w={{ lg: "40%", md: "80%" }}
@@ -97,7 +97,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.6,
+            duration: 1.2,
             ease: "easeOut",
           }}
           w={{ lg: "40%", md: "80%" }}
@@ -116,7 +116,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.6,
+            duration: 1.2,
             ease: "easeOut",
           }}
         >
@@ -131,7 +131,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.6,
+            duration: 1.2,
             ease: "easeOut",
           }}
         >
@@ -154,7 +154,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.6,
+            duration: 1.2,
             ease: "easeOut",
           }}
         >
@@ -190,7 +190,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.6,
+            duration: 1.2,
             ease: "easeOut",
           }}
         >
@@ -215,7 +215,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.6,
+            duration: 1.2,
             ease: "easeOut",
           }}
         >
@@ -231,7 +231,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.6,
+            duration: 1.2,
             ease: "easeOut",
           }}
         >
@@ -278,7 +278,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.6,
+            duration: 1.2,
             ease: "easeOut",
           }}
         >
@@ -315,7 +315,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.6,
+            duration: 1.2,
             ease: "easeOut",
           }}
         >

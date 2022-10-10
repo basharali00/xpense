@@ -24,19 +24,19 @@ const ChakraBox = chakra(motion.div, {
 const NAV_ITEMS = [
   {
     label: "Features",
-    href: "/features",
+    href: "#",
   },
   {
     label: "About us",
-    href: "/about",
+    href: "#",
   },
   {
     label: "Pricing",
-    href: "/pricing",
+    href: "#",
   },
   {
     label: "Feedback",
-    href: "/feedback",
+    href: "#",
   },
 ];
 
