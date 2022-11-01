@@ -11,11 +11,9 @@ function Feedback() {
       >
         <Link to="/">
           <Button
-            as={"a"}
             alignSelf={"center"}
             fontSize={"sm"}
             fontWeight={400}
-            href={"#"}
             variant="primary"
             size={"lg"}
           >

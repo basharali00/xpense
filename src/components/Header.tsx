@@ -6,7 +6,6 @@ import {
   Button,
   Collapse,
   chakra,
-  Link,
   Stack,
   shouldForwardProp,
   useColorModeValue,
@@ -14,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { motion, isValidMotionProp, useInView } from "framer-motion";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 
 const ChakraBox = chakra(motion.div, {
@@ -53,18 +53,20 @@ const DesktopNav = () => {
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Link
-            p={2}
-            href={navItem.href ?? "#"}
-            fontSize={"sm"}
-            fontWeight={500}
-            color={linkColor}
-            _hover={{
-              textDecoration: "none",
-              color: linkHoverColor,
-            }}
-          >
-            {navItem.label}
+          <Link to={navItem.href}>
+            <Button
+              p={2}
+              fontSize={"sm"}
+              fontWeight={500}
+              backgroundColor="transparent"
+              color={linkColor}
+              _hover={{
+                textDecoration: "none",
+                color: linkHoverColor,
+              }}
+            >
+              {navItem.label}
+            </Button>
           </Link>
         </Box>
       ))}
@@ -93,8 +95,6 @@ const MobileNavItem = ({ label, href }: MobileNavProps) => {
     <Stack spacing={4}>
       <Flex
         py={2}
-        as={Link}
-        href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
         _hover={{
