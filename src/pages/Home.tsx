@@ -56,10 +56,11 @@ export default function Home() {
         <ChakraBox
           animate={{
             opacity: [0, 1],
+            x: [30, 60],
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.2,
+            duration: 0.8,
             ease: "easeOut",
           }}
           w={{ lg: "40%", md: "80%" }}
@@ -72,7 +73,7 @@ export default function Home() {
                 my="3"
                 textTransform="uppercase"
               >
-                Track your Expenses to Save Money
+                Track your Expenses to Save More Money
               </Text>
 
               <Text fontSize="small" color="brand.light" my="5">
@@ -94,10 +95,12 @@ export default function Home() {
         <ChakraBox
           animate={{
             opacity: [0, 1],
+            x: [95, 50],
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.2,
+            duration: 0.8,
+
             ease: "easeOut",
           }}
           w={{ lg: "40%", md: "80%" }}
@@ -143,7 +146,7 @@ export default function Home() {
       <Flex
         alignItems="center"
         justifyContent="center"
-        direction={{ lg: "row", base: "column-reverse" }}
+        direction={{ lg: "row", base: "column" }}
         py="10"
         ref={supportRef}
       >
@@ -215,7 +218,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.2,
+            duration: 0.6,
             ease: "easeOut",
           }}
         >
@@ -278,7 +281,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.2,
+            duration: 0.8,
             ease: "easeOut",
           }}
         >
@@ -315,7 +318,7 @@ export default function Home() {
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
-            duration: 1.2,
+            duration: 0.8,
             ease: "easeOut",
           }}
         >

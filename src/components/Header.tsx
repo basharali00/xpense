@@ -24,19 +24,19 @@ const ChakraBox = chakra(motion.div, {
 const NAV_ITEMS = [
   {
     label: "Features",
-    href: "#",
+    href: "/features",
   },
   {
     label: "About us",
-    href: "#",
+    href: "/about",
   },
   {
     label: "Pricing",
-    href: "#",
+    href: "/pricing",
   },
   {
     label: "Feedback",
-    href: "#",
+    href: "/feedback",
   },
 ];
 
@@ -113,16 +113,7 @@ const MobileNavItem = ({ label, href }: MobileNavProps) => {
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   return (
-    <ChakraBox
-      animate={{
-        opacity: [0, 1],
-      }}
-      // @ts-ignore no problem in operation, although type error appears.
-      transition={{
-        duration: 1.6,
-        ease: "easeOut",
-      }}
-    >
+    <ChakraBox>
       <Box>
         <Flex
           bg={useColorModeValue("white", "gray.800")}
