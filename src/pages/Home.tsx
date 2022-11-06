@@ -45,7 +45,12 @@ export default function Home() {
   const usageRef = useRef(null);
   const usageRefIsInView = useInView(usageRef, { once: true });
   return (
-    <GridItem colSpan={6} mt="10" justifyContent={"center"} pt="20">
+    <GridItem
+      colSpan={6}
+      mt={{ base: "20", md: "10" }}
+      justifyContent={"center"}
+      pt="20"
+    >
       {/* #1 Section */}
       <Flex
         alignItems="center"
