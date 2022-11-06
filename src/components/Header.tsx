@@ -160,16 +160,15 @@ export default function WithSubnavigation() {
 
           <Stack
             flex={{ base: 1, md: 0 }}
+            display={{ base: "none", md: "block" }}
             justify={"flex-end"}
             direction={"row"}
             spacing={6}
           >
             <Button
-              as={"a"}
               alignSelf={"center"}
               fontSize={"sm"}
               fontWeight={400}
-              href={"#"}
               variant="primary"
             >
               Request a demo

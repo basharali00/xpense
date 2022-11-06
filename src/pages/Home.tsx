@@ -56,7 +56,6 @@ export default function Home() {
         <ChakraBox
           animate={{
             opacity: [0, 1],
-            x: [30, 60],
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
@@ -68,7 +67,7 @@ export default function Home() {
           <Box px="2">
             <Flex direction={"column"} my="2">
               <Text
-                fontSize={{ base: "3xl", lg: "6xl" }}
+                fontSize={{ base: "2xl", lg: "5xl" }}
                 color="brand.dark"
                 my="3"
                 textTransform="uppercase"
@@ -95,7 +94,6 @@ export default function Home() {
         <ChakraBox
           animate={{
             opacity: [0, 1],
-            x: [95, 50],
           }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
