@@ -93,19 +93,21 @@ const MobileNavItem = ({ label, href }: MobileNavProps) => {
   const linkHoverColor = useColorModeValue("gray.800", "white");
   return (
     <Stack spacing={4}>
-      <Flex
-        py={2}
-        justify={"space-between"}
-        align={"center"}
-        _hover={{
-          textDecoration: "none",
-          color: linkHoverColor,
-        }}
-      >
-        <Text fontWeight={600} color={linkColor}>
+      <Link to={href}>
+        <Button
+          p={2}
+          fontSize={"sm"}
+          fontWeight={500}
+          backgroundColor="transparent"
+          color={linkColor}
+          _hover={{
+            textDecoration: "none",
+            color: linkHoverColor,
+          }}
+        >
           {label}
-        </Text>
-      </Flex>
+        </Button>
+      </Link>
     </Stack>
   );
 };
